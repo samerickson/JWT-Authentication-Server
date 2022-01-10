@@ -8,7 +8,7 @@ const pool = mysql.createPool(dbConfig);
 pool.getConnection((error, connection) => {
 	if(error) {
 		console.error(error);
-		if(connection) connection.release
+		if(connection) connection.release;
 	} else {
 		console.log(`Connected to database`);
 	}
