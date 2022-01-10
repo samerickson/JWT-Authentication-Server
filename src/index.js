@@ -34,3 +34,6 @@ const shutdown = () => {
 
 process.on('SIGTERM', shutdown);
 process.on('SIGINT', shutdown);
+
+// Restart gracefully when using nodemon
+process.on('SIGUSR2', shutdown);
