@@ -1,14 +1,11 @@
 import Joi from 'joi';
-import passwordComplexity from 'joi-password-complexity';
 
-import complexityOptions from '../config/password.config.js';
+import Credentials from './Credentials.model.js';
 
-const User = Joi.object({
+const User = Credentials.keys({
 	first_name: Joi.string().min(2).max(16).required(),
 	last_name: Joi.string().min(2).max(16).required(),
-	email: Joi.string().email().required(),
-	role: Joi.string().valid('admin', 'tech', 'office', 'forman'),
-	password: passwordComplexity(complexityOptions).required()
+	role: Joi.string().valid('admin', 'tech', 'office', 'forman').required(),
 });
 
 export default User;
