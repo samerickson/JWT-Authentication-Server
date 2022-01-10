@@ -3,7 +3,7 @@ CREATE TABLE users(
 	first_name VARCHAR(64) NOT NULL,
 	last_name VARCHAR(64) NOT NULL,
 	email VARCHAR(64) NOT NULL UNIQUE,
-	rol VARCHAR(12) NOT NULL CHECK (role IN ('admin','tech','office', 'forman'))
+	role VARCHAR(12) NOT NULL CHECK (role IN ('admin','tech','office', 'forman')),
 	password VARCHAR(64) NOT NULL
 );
 
