@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 app.use('/api/v1', AuthRoutes);
 
 app.get('/', (_req, res) => {
-	res.json({ message: "🔭 -- Server is running!"});
+    res.json({ message: "🔭 -- Server is running!"});
 });
 
 app.get('/auth', verifyToken, (_req, res) => {
