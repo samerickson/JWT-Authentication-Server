@@ -5,6 +5,8 @@ import dbConfig from '../config/db.config.js';
 
 const pool = mysql.createPool(dbConfig);
 
+pool.getConnection = util.promisify(pool.getConnection);
+
 pool.getConnection((error, connection) => {
 	if(error) {
 		console.error(error);
@@ -13,7 +15,5 @@ pool.getConnection((error, connection) => {
 		console.log(`Connected to database`);
 	}
 });
-
-pool.query = util.promisify(pool.query);
 
 export default pool;

@@ -7,3 +7,8 @@ CREATE TABLE users(
 	password VARCHAR(64) NOT NULL
 );
 
+CREATE TABLE refresh_tokens(
+    token VARCHAR(300) PRIMARY KEY,
+    cid BINARY(16) REFERENCES Users(cid),
+    dateAdded TIMESTAMP NOT NULL UPDATE CURRENT_TIMESTAMP
+);
